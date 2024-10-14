@@ -23,4 +23,43 @@ public class BoardTest {
         
     }
 
+    @Test
+    public void TestfindCellCol(){
+        Board board = new Board(8,8);
+        
+        Cell cellColected = board.findCell('A',2) ;
+             
+
+        assertEquals('A', cellColected.getCelcol());
+    }
+
+    public void TestfindCellRow(){
+        Board board = new Board(8,8);
+        
+        Cell cellColected = board.findCell('A',2) ;
+             
+
+        assertEquals(2, cellColected.getCelrow());
+    }
+
+
+
+
+
+   /* @Test
+    public void CheckSetPieceOnBoard(){
+        Board board = new Board(8,8);
+        
+
+
+        assertEquals(board.getCelltypebypos('A',2), Celltype.PAWN);
+    }
+
+
+    @Test
+    public void CheckAcessByAbstractPos(){
+
+    }
+*/ 
+
 }

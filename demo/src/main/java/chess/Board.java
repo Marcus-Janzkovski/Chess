@@ -11,17 +11,38 @@ public class Board {
 
         this.ROW_COUNT = maxRow;
         this.COL_COUNT = maxCol;
+        this.Cells = new Cell[maxRow][maxCol];
 
         char aux = 'A';
 
-        for(int i = 0;i > ROW_COUNT;i++){
-            for(int j = 0; j> COL_COUNT;j++){
+        for(int i = 0;i < ROW_COUNT;i++){
+            for(int j = 0; j < COL_COUNT;j++){
 
                 this.Cells[i][j] = new Cell(aux, j+1); 
 
             }
             aux++;
         }
+    }
+
+
+    public int setPiece(Cell cell , Celltype piece){ // return 1 if sucess, -1 if fail, for debug propose 
+
+        
+
+        return 1;
+    }
+
+    public Cell findCell(char col, int row ){
+
+        Cell[][] cellMatrix = this.getCells();
+
+        int transformedChar = col - 64;
+
+        Cell findCell = cellMatrix[row-1][transformedChar];
+
+        return findCell;
+
     }
 
 
@@ -39,6 +60,16 @@ public class Board {
         return this.Cells[a][b].getCelltype();
 
     }
+
+    public Cell[][] getCells() {
+        return this.Cells;
+    }
+
+    public void setCells(Cell[][] Cells) {
+        this.Cells = Cells;
+    }
     
+
+
 
 }
