@@ -26,12 +26,6 @@ public class Board {
     }
 
 
-    public int setPiece(Cell cell , Celltype piece){ // return 1 if sucess, -1 if fail, for debug propose 
-
-        
-
-        return 1;
-    }
 
     public Cell findCell(char col, int row ){
 

@@ -1,18 +1,23 @@
 package chess;
 
+import chess.Pieces.Piece;
+
 public class Cell {
 
-    private Celltype celltype ;
 
+    //Piece related
+    protected Piece piece;
+    private boolean status; 
+
+    //Board related Matrix reference
     private int celrow;
     private int celcol;
 
-    private int chessrow;
+     //Board related Chess reference
+    private char chessrow;
     private char chesscol;
 
     public Cell(int inputCol,int inputRow ) {
-
-        this.celltype = Celltype.EMPTY;
 
         setCelcol(inputCol);
 
@@ -20,19 +25,12 @@ public class Cell {
 
     }
 
-    
-    public Celltype getCelltype() {
-        return celltype;
-    }
-    public void setCelltype(Celltype celltype) {
-        this.celltype = celltype;
-    }
 
     public int getChessrow() {
         return chessrow;
     }
 
-    private void setChessrow(int chessrow) { //private, to avoid conflicts
+    private void setChessrow(char chessrow) { //private, to avoid conflicts
         this.chessrow = chessrow;
     }
 

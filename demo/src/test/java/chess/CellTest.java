@@ -39,23 +39,6 @@ public class CellTest {
 
     }
 
-    @Test
-    public void checkCellEmpty(){
-        Cell cell = new Cell(0,3);
-
-        assertEquals(Celltype.EMPTY, cell.getCelltype());
-
-    }
-
-    @Test
-    public void checkCellSetType(){
-        Cell cell = new Cell(0,3);
-
-        cell.setCelltype(Celltype.BISHOP);
-
-        assertEquals(Celltype.BISHOP, cell.getCelltype());
-
-    }
 
 
 }
