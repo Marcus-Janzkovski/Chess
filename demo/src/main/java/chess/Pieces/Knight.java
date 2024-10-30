@@ -26,10 +26,10 @@ public class Knight extends Piece {
         //------------
 
         //matrix reference
-        int celrow_init = 8 - chessrow_init - '0' ; 
+        int celrow_init = 8 - (chessrow_init - '0') ; 
         int celcol_int = chesscol_init - 'A';
 
-        int celrow_target = 8 - chessrow_target - '0' ;  ; 
+        int celrow_target = 8 - (chessrow_target - '0') ; 
         int celcol_target = chesscol_target - 'A';
 
         //------------

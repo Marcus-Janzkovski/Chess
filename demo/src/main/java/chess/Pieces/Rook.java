@@ -5,8 +5,19 @@ import chess.Celltype;
 public class Rook extends Piece {
 
 
-    @SuppressWarnings("unused")
+
     private boolean moved;
+
+
+    public boolean isMoved() {
+        return moved;
+    }
+
+    public void setMoved(boolean moved) {
+        this.moved = moved;
+    }
+
+
 
     public Rook(Celltype name, Color color) {
         super(name, color);
@@ -30,10 +41,10 @@ public class Rook extends Piece {
         //------------
 
         //matrix reference
-        int celrow_init = 8 - chessrow_init - '0' ; 
+        int celrow_init = 8 - (chessrow_init - '0') ; 
         int celcol_int = chesscol_init - 'A';
 
-        int celrow_target = 8 - chessrow_target - '0' ;  ; 
+        int celrow_target = 8 - (chessrow_target - '0');
         int celcol_target = chesscol_target - 'A';
 
         //------------

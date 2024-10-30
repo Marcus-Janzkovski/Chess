@@ -7,6 +7,9 @@ import org.junit.Test;
 
 public class CellTest {
 
+
+//Check Contruct class
+
     @Test   
     public void checkChessCol1(){
         Cell cell = new Cell(0,0);

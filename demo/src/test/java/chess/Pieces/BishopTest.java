@@ -21,7 +21,7 @@ public class BishopTest {
 
         Bishop bishop = new Bishop(Celltype.BISHOP,Color.BLACK);
 
-        assertEquals(true, bishop.moveAllowed("C7", "F5"));
+        assertEquals(false, bishop.moveAllowed("C7", "F5"));
 
 
     }

@@ -21,7 +21,7 @@ public class KnightTest {
 
         Knight knight = new Knight(Celltype.KNIGHT,Color.BLACK);
 
-        assertEquals(true, knight.moveAllowed("C7", "F5"));
+        assertEquals(false, knight.moveAllowed("C7", "F5"));
 
 
     }

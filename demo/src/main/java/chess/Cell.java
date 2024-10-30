@@ -7,13 +7,12 @@ public class Cell {
 
     //Piece related
     protected Piece piece;
-    private boolean status; 
 
     //Board related Matrix reference
     private int celrow;
     private int celcol;
 
-     //Board related Chess reference
+    //Board related Chess reference
     private char chessrow;
     private char chesscol;
 
