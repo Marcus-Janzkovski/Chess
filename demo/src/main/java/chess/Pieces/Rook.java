@@ -23,7 +23,7 @@ public class Rook extends Piece {
         super(name, color);
 
         this.moved = false;
-        //TODO Auto-generated constructor stub
+        
     }
 
     @Override

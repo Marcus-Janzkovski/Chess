@@ -6,7 +6,7 @@ public class King extends Piece {
 
     public King(Celltype name, Color color) {
         super(name, color);
-        //TODO Auto-generated constructor stub
+        
     }
 
     @Override

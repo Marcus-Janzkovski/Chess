@@ -8,7 +8,7 @@ public class Bishop extends Piece {
 
     public Bishop(Celltype name, Color color) {
         super(name, color);
-        //TODO Auto-generated constructor stub
+        
     }
 
     

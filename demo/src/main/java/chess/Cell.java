@@ -82,9 +82,26 @@ public class Cell {
 
     }
 
+    //Really useful
+
     public boolean isEmpty() {
         return this.getPiece() == null;
     }
+
+    public String getpos(){
+
+        String ans = new String();
+
+        ans = String.valueOf(getChesscol()) + String.valueOf(getChessrow());
+
+        return ans;
+    }
+
+    public void clear(){
+
+        this.piece = null;
+    }
+
 }
 
    

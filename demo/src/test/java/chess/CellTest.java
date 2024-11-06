@@ -124,4 +124,25 @@ public class CellTest {
 
     }
 
+    @Test
+    public void getpos1(){
+
+        Cell cell = new Cell(0, 0);
+
+        assertEquals("A8", cell.getpos());
+
+    }
+
+    @Test
+    public void deletePiece(){
+        Cell cell = new Cell(0, 0);
+
+        cell.setPiece(new Bishop(Celltype.BISHOP, Color.WHITE));
+        
+        cell.clear();
+
+        assertEquals(true, cell.isEmpty());
+
+    }
+
 }
