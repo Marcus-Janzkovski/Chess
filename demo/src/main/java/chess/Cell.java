@@ -17,38 +17,33 @@ public class Cell {
     private char chesscol;
 
     public Cell(int inputCol,int inputRow ) {
-
+        
         setCelcol(inputCol);
-
         setCelrow(inputRow);
+    }
 
+    public Piece getPiece() {
+        return piece;
+    }
+
+    public void setPiece(Piece piece) {
+        this.piece = piece;
     }
 
 
-    public int getChessrow() {
-        return chessrow;
-    }
-
-    private void setChessrow(char chessrow) { //private, to avoid conflicts
-        this.chessrow = chessrow;
-    }
-
-    public char getChesscol() {
-        return chesscol;
-    }
-
-    private void setChesscol(char chesscol) { //private, to avoid conflicts
-        this.chesscol = chesscol;
-    }
+    //input matrix or chess parameters does not matter
 
     public int getCelrow() {
         return celrow;
     }
 
-    public final void setCelrow(int celrow) { //Convert the matrix position to Chess abstract pos
+
+    public void setCelrow(int celrow) { 
         this.celrow = celrow;
 
-        setChessrow(celrow + 1); //Board starts on 1 and matrix starts on 0
+        int aux = (8 - celrow);
+
+        this.chessrow = (char) ( 48 + aux) ;// Matrix to Chess 
 
     }
 
@@ -56,14 +51,41 @@ public class Cell {
         return celcol;
     }
 
-    public final void setCelcol(int celcol) { //Convert the matrix position to Chess abstract pos
-
+    public void setCelcol(int celcol) {
         this.celcol = celcol;
 
-        char equivalentChar = (char) (celcol + 65); //Convert matrix col into ASCII -> A = 65, B = 66 .....
-
-        setChesscol(equivalentChar);
+        this.chesscol = (char) (celcol + 65); // Matrix to Chess 
 
     }
-   
+
+ 
+    public char getChessrow() {
+        return chessrow;
+    }
+
+
+    public void setChessrow(char chessrow) { 
+        this.chessrow = chessrow;
+
+        this.celrow = 8 - ('A' - chessrow) ; //chess to Matrix
+
+    }
+
+    public char getChesscol() {
+        return chesscol;
+    }
+
+    public void setChesscol(char chesscol) {
+        this.chesscol = chesscol;
+
+        this.celcol = 65 - (int) chesscol;
+
+    }
+
+    public boolean isEmpty() {
+        return this.getPiece() == null;
+    }
 }
+
+   
+
