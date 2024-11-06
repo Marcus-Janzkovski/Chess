@@ -85,6 +85,7 @@ public class Cell {
     public boolean isEmpty() {
         return this.getPiece() == null;
     }
+}
 
    
-}
+
