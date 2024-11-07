@@ -6,6 +6,7 @@ import org.junit.Test;
 import chess.Pieces.Bishop;
 import chess.Pieces.Color;
 import chess.Pieces.Knight;
+import chess.Pieces.Piece;
 
 public class BoardTest {
 
@@ -74,7 +75,32 @@ public class BoardTest {
 
     }
 
-    
+    @Test
+    public void setPieceAt(){
+
+        Board board = new Board();
+
+        board.setPieceAt(new Bishop(Celltype.BISHOP, Color.BLACK),"A1");
+
+        
+
+        assertEquals(Celltype.BISHOP, board.getCells()[7][0].getPiece().getName());
+
+    }
+
+    @Test
+    public void getPieceAt(){
+
+        Board board = new Board();
+
+        board.getCells()[0][0].setPiece(new Bishop(Celltype.BISHOP,Color.WHITE));
+
+        assertEquals(Celltype.BISHOP, board.getPieceAt("A8").getName());
+
+    }
+
+
+
 
 
 }

@@ -134,7 +134,7 @@ public class CellTest {
     }
 
     @Test
-    public void deletePiece(){
+    public void testdeletePiece(){
         Cell cell = new Cell(0, 0);
 
         cell.setPiece(new Bishop(Celltype.BISHOP, Color.WHITE));
@@ -144,5 +144,19 @@ public class CellTest {
         assertEquals(true, cell.isEmpty());
 
     }
+
+    @Test 
+
+    public void testsetPos(){
+
+        Cell cell = new Cell(0, 0);
+
+        cell.setpos("A3");
+
+        assertEquals("A3", cell.getpos());
+
+
+    }
+
 
 }

@@ -97,6 +97,15 @@ public class Cell {
         return ans;
     }
 
+    public void setpos(String input){
+
+        setChesscol(input.charAt(0));
+        setChessrow(input.charAt(1));
+
+    }
+
+
+
     public void clear(){
 
         this.piece = null;

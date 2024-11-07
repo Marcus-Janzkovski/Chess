@@ -1,10 +1,10 @@
 package chess;
 
+import chess.Pieces.Piece;
+
 public class Board {
 
     private Cell[][] Cells;
-
-    
 
 
     public Board(){
@@ -91,7 +91,23 @@ public class Board {
         
     }
 
+    public void setPieceAt(Piece piece, String pos){
 
+        int row = 8 - (pos.charAt(1) - '0') ;
+        int col = pos.charAt(0) - 'A';
+
+        this.getCells()[row][col].setPiece(piece);
+        
+    }
+
+    public Piece getPieceAt(String pos){
+
+        int row = 8 - (pos.charAt(1) - '0') ;
+        int col = pos.charAt(0) - 'A';
+
+        return this.getCells()[row][col].getPiece();
+        
+    }
 
 
 

@@ -13,10 +13,9 @@ public abstract class Piece {
     }
 
 
-    public abstract boolean moveAllowed(String init, String target);
+    public abstract boolean moveAllowed(String init, String target); //Check the nature of movement
 
-
-
+    
     public Celltype getName(){
         return this.name;
     }
@@ -24,5 +23,9 @@ public abstract class Piece {
     public Color getColor(){
         return this.color;
     }
+
+
+
+
 
 }

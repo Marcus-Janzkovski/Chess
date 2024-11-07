@@ -8,7 +8,7 @@ import chess.Celltype;
 
 public class KingTest {
     @Test
-    public void testMoveAllowed1() { // UP´RIGHT
+    public void testMoveAllowed1() { // UPRIGHT
 
         King king = new King(Celltype.KING, Color.BLACK);
 
