@@ -1,5 +1,6 @@
 package chess.Pieces;
 
+import chess.Board;
 import chess.Celltype;
 
 public class Pawn extends Piece {
@@ -21,7 +22,7 @@ public class Pawn extends Piece {
     }
 
     @Override
-    public boolean moveAllowed(String init, String target) {
+    public boolean moveAllowed(String init, String target,Board board) {
         
         //Chess board reference
         char chessrow_init = init.charAt(1);

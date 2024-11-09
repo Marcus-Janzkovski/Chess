@@ -1,5 +1,6 @@
 package chess.Pieces;
 
+import chess.Board;
 import chess.Celltype;
 
 public class Rook extends Piece {
@@ -27,7 +28,7 @@ public class Rook extends Piece {
     }
 
     @Override
-    public boolean moveAllowed(String init, String target) {
+    public boolean moveAllowed(String init, String target,Board board) {
         
          
 

@@ -14,7 +14,7 @@ public class RookTest {
 
         Rook rook = new Rook(Celltype.ROOK,Color.BLACK);
 
-        assertEquals(true, rook.moveAllowed("B7", "B1"));
+        assertEquals(true, rook.moveAllowed("B7", "B1", null));
     }
 
     @Test
@@ -22,7 +22,7 @@ public class RookTest {
 
         Rook rook = new Rook(Celltype.ROOK,Color.BLACK);
 
-        assertEquals(false, rook.moveAllowed("C7", "B1"));
+        assertEquals(false, rook.moveAllowed("C7", "B1", null));
     }
 
 

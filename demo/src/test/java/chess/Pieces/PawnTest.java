@@ -14,7 +14,7 @@ public class PawnTest {
 
         Pawn pawn = new Pawn(Celltype.PAWN,Color.BLACK);
 
-        assertEquals(true, pawn.moveAllowed("B2", "B1"));
+        assertEquals(true, pawn.moveAllowed("B2", "B1", null));
 
     }
 
@@ -23,7 +23,7 @@ public class PawnTest {
 
         Pawn pawn = new Pawn(Celltype.PAWN,Color.WHITE);
 
-        assertEquals(true, pawn.moveAllowed("B1", "B2"));
+        assertEquals(true, pawn.moveAllowed("B1", "B2", null));
 
     }
 
@@ -32,7 +32,7 @@ public class PawnTest {
 
         Pawn pawn = new Pawn(Celltype.PAWN,Color.BLACK);
 
-        assertEquals(false, pawn.moveAllowed("B1", "B2"));
+        assertEquals(false, pawn.moveAllowed("B1", "B2", null));
 
 
     }
@@ -43,7 +43,7 @@ public class PawnTest {
 
         Pawn pawn = new Pawn(Celltype.PAWN,Color.WHITE);
 
-        assertEquals(true, pawn.moveAllowed("C3", "C5"));
+        assertEquals(true, pawn.moveAllowed("C3", "C5", null));
 
 
     }
@@ -55,7 +55,7 @@ public class PawnTest {
 
         pawn.setMoved();
 
-        assertEquals(false, pawn.moveAllowed("C3", "C5"));
+        assertEquals(false, pawn.moveAllowed("C3", "C5", null));
 
     }
 

@@ -12,7 +12,7 @@ public class QueenTest {
 
         Queen queen = new Queen(Celltype.QUEEN,Color.BLACK);
 
-        assertEquals(true, queen.moveAllowed("B2", "F2"));
+        assertEquals(true, queen.moveAllowed("B2", "F2", null));
 
     }
 
@@ -21,7 +21,7 @@ public class QueenTest {
 
         Queen queen = new Queen(Celltype.QUEEN,Color.BLACK);
 
-        assertEquals(true, queen.moveAllowed("B1", "B5"));
+        assertEquals(true, queen.moveAllowed("B1", "B5", null));
 
     }
 
@@ -31,7 +31,7 @@ public class QueenTest {
 
         Queen queen = new Queen(Celltype.QUEEN,Color.BLACK);
 
-        assertEquals(true, queen.moveAllowed("A1", "B2"));
+        assertEquals(true, queen.moveAllowed("A1", "B2", null));
 
     }
 
@@ -40,7 +40,7 @@ public class QueenTest {
 
         Queen queen = new Queen(Celltype.QUEEN,Color.BLACK);
 
-        assertEquals(false, queen.moveAllowed("A1", "C2"));
+        assertEquals(false, queen.moveAllowed("A1", "C2", null));
 
     }
 
@@ -49,7 +49,7 @@ public class QueenTest {
 
         Queen queen = new Queen(Celltype.QUEEN,Color.BLACK);
 
-        assertEquals(false, queen.moveAllowed("C3", "E7"));
+        assertEquals(false, queen.moveAllowed("C3", "E7", null));
 
     }
 

@@ -1,5 +1,6 @@
 package chess.Pieces;
 
+import chess.Board;
 import chess.Celltype;
 
 public class Knight extends Piece {
@@ -12,33 +13,37 @@ public class Knight extends Piece {
     }
 
     @Override
-    public boolean moveAllowed(String init, String target){
+    public boolean moveAllowed(String init, String target,Board board){
 
         
 
-        //Chess board reference
-        char chessrow_init = init.charAt(1);
-        char chesscol_init = init.charAt(0);
-
-        char chessrow_target = target.charAt(1);
-        char chesscol_target = target.charAt(0);
-
-        //------------
-
         //matrix reference
-        int celrow_init = 8 - (chessrow_init - '0') ; 
-        int celcol_int = chesscol_init - 'A';
+        int celrow_init = 8 - (init.charAt(1) - '0') ; 
+        int celcol_init = init.charAt(0) - 'A';
 
-        int celrow_target = 8 - (chessrow_target - '0') ; 
-        int celcol_target = chesscol_target - 'A';
+        int celrow_target = 8 - (target.charAt(1) - '0') ;
+        int celcol_target = target.charAt(0)- 'A';
+
 
         //------------
 
         int delta_row = Math.abs(celrow_init - celrow_target);
-        int delta_col = Math.abs(celcol_int - celcol_target);
+        int delta_col = Math.abs(celcol_init - celcol_target);
     
 
-        return (delta_row == 2 && delta_col == 1) || (delta_row == 1 && delta_col == 2); // check the "L" move for 8 possibilites, but otimized
+        if (!((delta_row == 2 && delta_col == 1) || (delta_row == 1 && delta_col == 2))){// check the "L" move for 8 possibilites, but otimized
+            
+            return false;
+
+        } 
+
+
+        if (board.getPieceAt(target) == null){ // check the color of target pos, if same color, not allowed
+            return true;
+        } else {
+            return (board.getPieceAt(target).getColor() != this.getColor());
+        }        
+
 
     }
 

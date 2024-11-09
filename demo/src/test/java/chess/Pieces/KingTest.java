@@ -12,7 +12,7 @@ public class KingTest {
 
         King king = new King(Celltype.KING, Color.BLACK);
 
-        assertEquals(true, king.moveAllowed("A1", "B2"));
+        assertEquals(true, king.moveAllowed("A1", "B2", null));
 
 
     }
@@ -22,7 +22,7 @@ public class KingTest {
 
         King king = new King(Celltype.KING, Color.BLACK);
 
-        assertEquals(true, king.moveAllowed("B1", "A2"));
+        assertEquals(true, king.moveAllowed("B1", "A2", null));
 
 
     }
@@ -32,7 +32,7 @@ public class KingTest {
 
         King king = new King(Celltype.KING, Color.BLACK);
 
-        assertEquals(true, king.moveAllowed("B1", "B2"));
+        assertEquals(true, king.moveAllowed("B1", "B2", null));
 
 
     }
@@ -42,7 +42,7 @@ public class KingTest {
 
         King king = new King(Celltype.KING, Color.BLACK);
 
-        assertEquals(true, king.moveAllowed("D4", "D3"));
+        assertEquals(true, king.moveAllowed("D4", "D3", null));
 
 
     }
@@ -52,7 +52,7 @@ public class KingTest {
 
         King king = new King(Celltype.KING, Color.BLACK);
 
-        assertEquals(true, king.moveAllowed("D7", "C7"));
+        assertEquals(true, king.moveAllowed("D7", "C7", null));
 
 
     }
@@ -62,7 +62,7 @@ public class KingTest {
 
         King king = new King(Celltype.KING, Color.BLACK);
 
-        assertEquals(true, king.moveAllowed("D7", "E7"));
+        assertEquals(true, king.moveAllowed("D7", "E7", null));
 
 
     }
@@ -72,7 +72,7 @@ public class KingTest {
 
         King king = new King(Celltype.KING, Color.BLACK);
 
-        assertEquals(false, king.moveAllowed("D7", "F7"));
+        assertEquals(false, king.moveAllowed("D7", "F7", null));
 
 
     }
@@ -82,7 +82,7 @@ public class KingTest {
 
         King king = new King(Celltype.KING, Color.BLACK);
 
-        assertEquals(false, king.moveAllowed("C7", "A1"));
+        assertEquals(false, king.moveAllowed("C7", "A1", null));
 
 
     }
@@ -92,7 +92,7 @@ public class KingTest {
 
         King king = new King(Celltype.KING, Color.BLACK);
 
-        assertEquals(false, king.moveAllowed("F1", "D3"));
+        assertEquals(false, king.moveAllowed("F1", "D3", null));
 
 
     }

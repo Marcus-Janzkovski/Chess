@@ -1,5 +1,6 @@
 package chess.Pieces;
 
+import chess.Board;
 import chess.Celltype;
 
 public abstract class Piece {
@@ -13,7 +14,7 @@ public abstract class Piece {
     }
 
 
-    public abstract boolean moveAllowed(String init, String target); //Check the nature of movement
+    public abstract boolean moveAllowed(String init, String target, Board board); //Check the nature of movement
 
     
     public Celltype getName(){

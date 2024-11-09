@@ -6,7 +6,7 @@ import org.junit.Test;
 import chess.Pieces.Bishop;
 import chess.Pieces.Color;
 import chess.Pieces.Knight;
-import chess.Pieces.Piece;
+
 
 public class BoardTest {
 
