@@ -11,20 +11,6 @@ public class KnightTest {
     
 
     @Test
-    public void testMoveAllowedFalse() {
-
-        Knight knight = new Knight(Color.BLACK);
-
-        Board board = new Board();
-
-        board.setPieceAt(new Bishop(Color.BLACK), "C7");
-
-        assertEquals(false, knight.moveAllowed("C7", "F5", board));
-
-
-    }
-
-    @Test
     public void testMoveSameColor() {
 
         Knight knight = new Knight(Color.BLACK);
@@ -107,5 +93,49 @@ public class KnightTest {
         assertEquals(true, knight.moveAllowed("A8", "B6", board));
 
     }
+
+    @Test
+    public void testMoveAllowedFalse1() {
+
+        Knight knight = new Knight(Color.BLACK);
+
+        Board board = new Board();
+
+        board.setPieceAt(new Bishop(Color.BLACK), "C7");
+
+        assertEquals(false, knight.moveAllowed("C7", "F5", board));
+
+
+    }
+
+    @Test
+    public void testMoveAllowedFalse2(){
+
+        Knight knight = new Knight(Color.BLACK);
+
+        Board board = new Board();
+
+        board.setPieceAt(new Bishop(Color.BLACK), "C7");
+
+        assertEquals(false, knight.moveAllowed("C5", "F5", board));
+
+
+    }
+
+    @Test
+    public void testMoveAllowedFalse3(){
+
+        Knight knight = new Knight(Color.BLACK);
+
+        Board board = new Board();
+
+        board.setPieceAt(new Bishop(Color.BLACK), "C7");
+
+        assertEquals(false, knight.moveAllowed("C5", "A7", board));
+
+
+    }
+
+
 
 }

@@ -24,58 +24,91 @@ public class Pawn extends Piece {
 
     @Override
     public boolean moveAllowed(String init, String target,Board board) {
+
         
-        //Chess board reference
-        char chessrow_init = init.charAt(1);
-        //char chesscol_init = init.charAt(0); 
-
-        char chessrow_target = target.charAt(1);
-        //char chesscol_target = target.charAt(0);
-
-        //------------
-
         //matrix reference
-        int celrow_init = 8 - (chessrow_init - '0') ; 
-        //int celcol_int = chesscol_init - 'A';
+        int celrow_init = 8 - (init.charAt(1) - '0') ; 
+        
+        int celcol_init = init.charAt(0) - 'A';
 
-        int celrow_target = 8 - (chessrow_target - '0') ; 
-        //int celcol_target = chesscol_target - 'A';
+        int celrow_target = 8 - (target.charAt(1) - '0') ;
+        
+        int celcol_target = target.charAt(0)- 'A';
+
+        int difrow = celrow_target - celrow_init;
+        int difcol = celcol_target - celcol_init;
+
+        int delta_col = Math.abs(difcol);
+
 
         //------------
 
 
-        if (this.getColor() == Color.WHITE){ //White goes up
+        if (difcol == 0){ //Move straightfoward, no diagonals check
 
-            if(this.moved){
+            if (this.getColor() == Color.WHITE){ //White goes up
 
-                return (celrow_target - celrow_init == -1);
+                if (difrow == -1){
+                    return board.getPieceAt(target) == null;
+                }
+                if (difrow == -2){
+                    if(this.isMoved()){
+                        return false;
+                    } else {
+                        return ((board.getCells()[celrow_init-1][celcol_target].getPiece() == null) && (board.getPieceAt(target) == null));
+                    }
+                }
+            }
 
-            } else {
+            if (this.getColor() == Color.BLACK){ //BLACK goes down
 
-                return (celrow_target - celrow_init == -1) || (celrow_target - celrow_init == -2);
- 
+                if (difrow == 1){
+                    return board.getPieceAt(target) == null;
+                }
+                if (difrow == 2){
+                    if(this.isMoved()){
+                        return false;
+                    } else {
+                        return ((board.getCells()[celrow_init+1][celcol_target].getPiece() == null) && (board.getPieceAt(target) == null));
+                    }
+                }
+               
+            }
+
+        } else { // now, must check if the target is invalid or if has a collision in diag
+
+            
+            if (this.getColor() == Color.WHITE) { 
                 
-            } 
-        }
+                if( !(delta_col == 1 && difrow == -1) ){ //invalid diagonal
+                    return false;
+                } else {
 
-        if (this.getColor() == Color.BLACK){ //Black goes down
+                    if (board.getPieceAt(target) == null){ // diagonal must not be empty
+                        return false;
+                    }
 
-            if(this.moved){
-
-                return (celrow_target - celrow_init == 1);
-
-            } else {
-
-                return (celrow_target - celrow_init == 1) || (celrow_target - celrow_init == 2); 
+                    return board.getPieceAt(target).getColor() == Color.BLACK; //Must be diff color
+                }
 
             }
-            
+
+            if (this.getColor() == Color.BLACK) { 
+                
+                if( !(delta_col == 1 && difrow == 1) ){ //invalid diagonal
+                    return false;
+                } else {
+
+                    if (board.getPieceAt(target) == null){ // diagonal must not be empty
+                        return false;
+                    }
+
+                    return board.getPieceAt(target).getColor() == Color.WHITE; //Must be diff color
+                }
+
+            }
+        
         }
-        return false; //for debug and exceptions
+        return false; // debug only -> if code get here, something went wrong      
     }
-
-
-
-
-
 }
