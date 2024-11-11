@@ -12,6 +12,17 @@ public class King extends Piece {
         
     }
 
+    private boolean moved;
+
+    
+    public boolean isMoved() {
+        return moved;
+    }
+
+    public void setMoved() {
+        this.moved = true;
+    }
+
     @Override
     public boolean moveAllowed(String init, String target,Board board) {
 

@@ -14,8 +14,8 @@ public class Rook extends Piece {
         return moved;
     }
 
-    public void setMoved(boolean moved) {
-        this.moved = moved;
+    public void setMoved() {
+        this.moved = true;
     }
 
 

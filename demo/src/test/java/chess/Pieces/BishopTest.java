@@ -149,9 +149,4 @@ public class BishopTest {
     assertEquals(false, bishop.moveAllowed("A6", "C4", board));
     }
 
-
-
-
-
-
 }

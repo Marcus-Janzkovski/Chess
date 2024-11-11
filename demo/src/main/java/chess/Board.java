@@ -62,9 +62,6 @@ public class Board {
                     } 
                 } 
 
-
-                
-
             }     
         }
 

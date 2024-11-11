@@ -6,8 +6,29 @@ import org.junit.Test;
 
 import chess.Board;
 
-
 public class KingTest {
+
+    @Test
+    public void testMovedTrue() { // FALSE FOWARD
+
+        King king = new King( Color.BLACK);
+
+        king.setMoved();
+
+        assertEquals(true, king.isMoved());
+
+    }
+
+    @Test
+    public void testMovedFalse() { // FALSE FOWARD
+
+        King king = new King( Color.BLACK);
+        king.setMoved();
+
+        assertEquals(true, king.isMoved());
+
+    }
+
     @Test
     public void testMoveAllowed1() { // UPRIGHT
 
@@ -115,6 +136,8 @@ public class KingTest {
 
 
     }
+
+    
 
 
 }
