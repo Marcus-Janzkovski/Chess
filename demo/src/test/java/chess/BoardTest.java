@@ -6,7 +6,7 @@ import org.junit.Test;
 import chess.Pieces.Bishop;
 import chess.Pieces.Color;
 import chess.Pieces.Knight;
-
+ 
 
 public class BoardTest {
 
@@ -35,11 +35,11 @@ public class BoardTest {
 
         Board board = new Board();
 
-        board.getCells()[0][0].setPiece(new Bishop(Celltype.BISHOP,Color.WHITE));
+        board.getCells()[0][0].setPiece(new Bishop(Color.WHITE));
 
-        board.getCells()[3][5].setPiece(new Knight(Celltype.KNIGHT,Color.WHITE));
+        board.getCells()[3][5].setPiece(new Knight(Color.WHITE));
 
-        board.getCells()[7][7].setPiece(new Knight(Celltype.KNIGHT,Color.WHITE));
+        board.getCells()[7][7].setPiece(new Knight(Color.WHITE));
 
         assertEquals(3, board.countPieces());
 
@@ -50,11 +50,11 @@ public class BoardTest {
 
         Board board = new Board();
 
-        board.getCells()[0][0].setPiece(new Bishop(Celltype.BISHOP,Color.WHITE));
+        board.getCells()[0][0].setPiece(new Bishop(Color.WHITE));
 
-        board.getCells()[3][5].setPiece(new Knight(Celltype.KNIGHT,Color.BLACK));
+        board.getCells()[3][5].setPiece(new Knight(Color.BLACK));
 
-        board.getCells()[7][7].setPiece(new Knight(Celltype.KNIGHT,Color.WHITE));
+        board.getCells()[7][7].setPiece(new Knight(Color.WHITE));
 
         assertEquals(2, board.countPiecesWhite());
 
@@ -65,11 +65,11 @@ public class BoardTest {
 
         Board board = new Board();
 
-        board.getCells()[0][0].setPiece(new Bishop(Celltype.BISHOP,Color.WHITE));
+        board.getCells()[0][0].setPiece(new Bishop(Color.WHITE));
 
-        board.getCells()[3][5].setPiece(new Knight(Celltype.KNIGHT,Color.BLACK));
+        board.getCells()[3][5].setPiece(new Knight(Color.BLACK));
 
-        board.getCells()[7][7].setPiece(new Knight(Celltype.KNIGHT,Color.WHITE));
+        board.getCells()[7][7].setPiece(new Knight(Color.WHITE));
 
         assertEquals(1, board.countPiecesBlack());
 
@@ -80,7 +80,7 @@ public class BoardTest {
 
         Board board = new Board();
 
-        board.setPieceAt(new Bishop(Celltype.BISHOP, Color.BLACK),"A1");
+        board.setPieceAt(new Bishop( Color.BLACK),"A1");
 
         
 
@@ -93,7 +93,7 @@ public class BoardTest {
 
         Board board = new Board();
 
-        board.getCells()[0][0].setPiece(new Bishop(Celltype.BISHOP,Color.WHITE));
+        board.getCells()[0][0].setPiece(new Bishop(Color.WHITE));
 
         assertEquals(Celltype.BISHOP, board.getPieceAt("A8").getName());
 

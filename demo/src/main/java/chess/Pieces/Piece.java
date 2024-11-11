@@ -8,8 +8,7 @@ public abstract class Piece {
     private Celltype name;
     private Color color;
 
-    public Piece (Celltype name, Color color) {
-        this.name = name;
+    public Piece (Color color) {
         this.color = color;
     }
 
@@ -23,6 +22,10 @@ public abstract class Piece {
 
     public Color getColor(){
         return this.color;
+    }
+
+    public void setName(Celltype name){
+        this.name = name;
     }
 
 

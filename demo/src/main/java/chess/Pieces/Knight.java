@@ -7,9 +7,9 @@ public class Knight extends Piece {
 
     //rembember: Piece have name and color
   
-    public Knight(Celltype name, Color color) {
-        super(name, color);
-
+    public Knight(Color color) {
+        super(color);
+        setName(Celltype.KNIGHT);
     }
 
     @Override

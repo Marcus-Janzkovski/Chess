@@ -7,9 +7,10 @@ public class Bishop extends Piece {
 
     //rembember: Piece have name and color
 
-    public Bishop(Celltype name, Color color) {
-        super(name, color);
+    public Bishop(Color color) {
+        super(color);
         
+        setName(Celltype.BISHOP);
     }
 
     

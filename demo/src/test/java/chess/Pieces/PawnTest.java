@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import chess.Celltype;
+
 
 
 public class PawnTest {
@@ -12,7 +12,7 @@ public class PawnTest {
     @Test
     public void testMoveAllowedTrue_B() {
 
-        Pawn pawn = new Pawn(Celltype.PAWN,Color.BLACK);
+        Pawn pawn = new Pawn(Color.BLACK);
 
         assertEquals(true, pawn.moveAllowed("B2", "B1", null));
 
@@ -21,7 +21,7 @@ public class PawnTest {
     @Test
     public void testMoveAllowedTrue_W() {
 
-        Pawn pawn = new Pawn(Celltype.PAWN,Color.WHITE);
+        Pawn pawn = new Pawn(Color.WHITE);
 
         assertEquals(true, pawn.moveAllowed("B1", "B2", null));
 
@@ -30,7 +30,7 @@ public class PawnTest {
     @Test
     public void testMoveAllowedFalse() {
 
-        Pawn pawn = new Pawn(Celltype.PAWN,Color.BLACK);
+        Pawn pawn = new Pawn(Color.BLACK);
 
         assertEquals(false, pawn.moveAllowed("B1", "B2", null));
 
@@ -41,7 +41,7 @@ public class PawnTest {
     @Test
     public void testHyperjumpStartTrue() {
 
-        Pawn pawn = new Pawn(Celltype.PAWN,Color.WHITE);
+        Pawn pawn = new Pawn(Color.WHITE);
 
         assertEquals(true, pawn.moveAllowed("C3", "C5", null));
 
@@ -51,7 +51,7 @@ public class PawnTest {
     @Test
     public void testHyperjumpStartFalse() {
 
-        Pawn pawn = new Pawn(Celltype.PAWN,Color.BLACK);
+        Pawn pawn = new Pawn(Color.BLACK);
 
         pawn.setMoved();
 

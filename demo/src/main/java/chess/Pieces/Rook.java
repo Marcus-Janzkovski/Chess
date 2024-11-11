@@ -20,11 +20,12 @@ public class Rook extends Piece {
 
 
 
-    public Rook(Celltype name, Color color) {
-        super(name, color);
+    public Rook(Color color) {
+        super(color);
 
         this.moved = false;
         
+        setName(Celltype.ROOK);
     }
 
     @Override

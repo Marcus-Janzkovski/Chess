@@ -97,7 +97,7 @@ public class CellTest {
         public void testSetandGetPiece() {
 
         Cell cell = new Cell(2,3);
-        Bishop bishop = new Bishop(Celltype.BISHOP, Color.BLACK);
+        Bishop bishop = new Bishop( Color.BLACK);
         cell.setPiece(bishop);
 
         assertEquals(Celltype.BISHOP, cell.getPiece().getName());
@@ -108,7 +108,7 @@ public class CellTest {
     public void testIsEmpty1() {
 
         Cell cell = new Cell(2,3);
-        Bishop bishop = new Bishop(Celltype.BISHOP, Color.BLACK);
+        Bishop bishop = new Bishop( Color.BLACK);
         cell.setPiece(bishop);
 
         assertEquals(false, cell.isEmpty());
@@ -137,7 +137,7 @@ public class CellTest {
     public void testdeletePiece(){
         Cell cell = new Cell(0, 0);
 
-        cell.setPiece(new Bishop(Celltype.BISHOP, Color.WHITE));
+        cell.setPiece(new Bishop( Color.WHITE));
         
         cell.clear();
 

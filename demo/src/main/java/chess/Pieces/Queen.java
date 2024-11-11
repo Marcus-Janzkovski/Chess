@@ -5,8 +5,10 @@ import chess.Celltype;
 
 public class Queen extends Piece{
 
-    public Queen(Celltype name, Color color) {
-        super(name, color);
+    public Queen(Color color) {
+        super(color);
+
+        setName(Celltype.QUEEN);
        
     }
 

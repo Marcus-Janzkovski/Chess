@@ -16,9 +16,10 @@ public class Pawn extends Piece {
         this.moved = true;
     }
 
-    public Pawn(Celltype name, Color color) {
-        super(name, color);
+    public Pawn(Color color) {
+        super(color);
         this.moved = false;
+        setName(Celltype.PAWN);
     }
 
     @Override
@@ -26,7 +27,7 @@ public class Pawn extends Piece {
         
         //Chess board reference
         char chessrow_init = init.charAt(1);
-        //char chesscol_init = init.charAt(0);
+        //char chesscol_init = init.charAt(0); 
 
         char chessrow_target = target.charAt(1);
         //char chesscol_target = target.charAt(0);
