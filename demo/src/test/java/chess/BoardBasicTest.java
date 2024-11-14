@@ -8,7 +8,7 @@ import chess.Pieces.Color;
 import chess.Pieces.Knight;
  
 
-public class BoardTest {
+public class BoardBasicTest {
 
 
     @Test

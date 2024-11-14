@@ -30,7 +30,7 @@ public class KingTest {
     }
 
     @Test
-    public void testMoveAllowed1() { // UPRIGHT
+    public void testMoveAllowed1() { // UP RIGHT
 
         King king = new King( Color.BLACK);
 
@@ -54,7 +54,32 @@ public class KingTest {
     }
 
     @Test
-    public void testMoveAllowed3() { // UP FOWARD
+    public void testMoveAllowed3() { // Down RIGHT
+
+        King king = new King( Color.BLACK);
+
+        Board board = new Board();
+
+        assertEquals(true, king.moveAllowed("C6", "D5", board));
+
+
+    }
+
+    @Test
+    public void testMoveAllowed4() { // Down LEFT
+
+        King king = new King( Color.BLACK);
+
+        Board board = new Board();
+
+        assertEquals(true, king.moveAllowed("C6", "B5", board));
+
+
+    }
+
+
+    @Test
+    public void testMoveAllowed5() { // UP FOWARD
 
         King king = new King( Color.BLACK);
 
@@ -66,7 +91,7 @@ public class KingTest {
     }
 
     @Test
-    public void testMoveAllowed4() { // DOWN FOWARD
+    public void testMoveAllowed6() { // DOWN FOWARD
 
         King king = new King( Color.BLACK);
 
@@ -78,7 +103,7 @@ public class KingTest {
     }
 
     @Test
-    public void testMoveAllowed5() { // LEFT FOWARD
+    public void testMoveAllowed7() { // LEFT FOWARD
 
         King king = new King( Color.BLACK);
 
@@ -90,7 +115,7 @@ public class KingTest {
     }
 
     @Test
-    public void testMoveAllowed6() { // RIGHT FOWARD
+    public void testMoveAllowed8() { // RIGHT FOWARD
 
         King king = new King( Color.BLACK);
 
@@ -137,7 +162,35 @@ public class KingTest {
 
     }
 
-    
+    @Test
+    public void testMoveAllowedSameColor() { 
+
+        King king = new King( Color.BLACK);
+
+        Board board = new Board();
+
+        board.setPieceAt(new Bishop(Color.BLACK), "F2");
+
+        assertEquals(false, king.moveAllowed("F1", "F2", board));
+
+
+    }
+
+    @Test
+    public void testMoveAllowedDiffColor() { 
+
+        King king = new King( Color.BLACK);
+
+        Board board = new Board();
+
+        board.setPieceAt(new Bishop(Color.WHITE), "F2");
+
+        assertEquals(true, king.moveAllowed("F1", "F2", board));
+
+
+    }
+
+
 
 
 }

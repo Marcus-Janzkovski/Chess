@@ -107,5 +107,13 @@ public class Board {
     }
 
 
+    public void move(String init, String target){
+
+        this.setPieceAt(this.getPieceAt(init), target);
+        
+        this.setPieceAt(null, init);
+
+    }
+
 
 }

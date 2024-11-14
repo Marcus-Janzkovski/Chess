@@ -149,4 +149,16 @@ public class BishopTest {
     assertEquals(false, bishop.moveAllowed("A6", "C4", board));
     }
 
+
+    @Test
+    public void testMoveAllowedFALSE1() { // test /+ Diff Color
+
+    Bishop bishop = new Bishop(Color.BLACK);
+
+    Board board = new Board();
+
+    assertEquals(false, bishop.moveAllowed("A4", "H5", board));
+
+    }
+
 }

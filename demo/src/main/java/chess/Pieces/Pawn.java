@@ -5,20 +5,9 @@ import chess.Celltype;
 
 public class Pawn extends Piece {
 
-    private boolean moved;
-
-
-    public boolean isMoved() {
-        return moved;
-    }
-
-    public void setMoved() {
-        this.moved = true;
-    }
-
     public Pawn(Color color) {
+
         super(color);
-        this.moved = false;
         setName(Celltype.PAWN);
     }
 
